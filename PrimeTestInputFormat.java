@@ -25,7 +25,7 @@ public class PrimeTestInputFormat implements InputFormat<LongWritable, LongWrita
         long numbersInSplit = (long)Math.floor((endingNumber - startingNumber)/numSplits);
         long startingNumberInSplit = startingNumber;
         long endingNumberInSplit = startingNumberInSplit + numbersInSplit;
-        long remainderInLastSplit = (endingNumber - startingNumber)%numSplits;
+        long remainderInLastSplit = (endingNumber - startingNumber) - numSplits*numbersInSplit;
 
         ArrayList<PrimeInputSplit> splits = new ArrayList<PrimeInputSplit>(numSplits);
 
